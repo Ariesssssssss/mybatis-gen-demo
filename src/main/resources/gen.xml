@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lautumn.mybatis.gen.bean.Gen">
+
+
+    <update id="createTable">
+
+      CREATE TABLE `${tableInfo.tableName}`(
+      <foreach collection="columnList" item="column" separator=",">
+          ${column.name} ${column.columnDefinition}
+      </foreach>
+      ) comment #{tableInfo.comment}
+        engine=${tableInfo.engine}
+        charset=utf8mb4
+
+    </update>
+
+</mapper>
+

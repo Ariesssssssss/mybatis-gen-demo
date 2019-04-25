@@ -1,0 +1,7 @@
+*.jar
+*.original
+*idea
+/target/
+*.iml
+rocket-dist/target/
+*.idea*
